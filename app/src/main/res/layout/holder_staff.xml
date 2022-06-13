@@ -17,7 +17,7 @@
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
     <TextView
         android:id="@+id/tv_username"
@@ -69,7 +69,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="piece rate"
+        android:stateListAnimator="@null"
         android:textAllCaps="true"
+        android:padding="12dp"
+        android:backgroundTint="@color/primary_button_color"
         app:layout_constraintEnd_toStartOf="@+id/btn_wages"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,10 +82,26 @@
         android:id="@+id/btn_wages"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:padding="12dp"
         android:layout_marginEnd="8dp"
         android:text="WAGES"
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/uncheck_button_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_piece_rate"
         app:layout_constraintTop_toTopOf="@+id/btn_piece_rate" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#e0e0e0"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

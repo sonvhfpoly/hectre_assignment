@@ -29,11 +29,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
+            android:id="@+id/rcv_staffs"
             android:layout_height="wrap_content"
+            android:background="@android:color/white"
             android:layout_marginTop="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/holder_job_detail"
+            tools:listitem="@layout/holder_staff"
             tools:itemCount="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
