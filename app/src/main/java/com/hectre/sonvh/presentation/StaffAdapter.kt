@@ -27,9 +27,18 @@ class StaffAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 class StaffDetailHolder(private val binding: HolderStaffBinding): RecyclerView.ViewHolder(binding.root){
 
+    lateinit var adapter: StaffRowAdapter
+
     fun bind(staff: Staff, showDivider: Boolean){
         binding.tvUsername.text = staff.firstName
         binding.divider.isVisible = showDivider
+        binding.tvStaffOrchard.text = staff.orchard
+        binding.tvStaffBlock.text = staff.block
+
+
+
+        adapter = StaffRowAdapter(staffRows = staff.staffRows)
+        binding.rcvStaffRow.adapter = adapter
     }
 
     companion object{

@@ -12,6 +12,24 @@ import com.hectre.sonvh.models.TreeRow
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    private val row3 =   TreeRow(
+        rowId = 3,
+        totalTree = 556,
+        plantedTree = 0,
+        plantedTreeLabel = ""
+    )
+    private val row4  =   TreeRow(
+        rowId = 4,
+        totalTree = 556,
+        plantedTree = 250,
+        plantedTreeLabel = "Yi Wan"
+    )
+    private val row5 =  TreeRow(
+        rowId = 5,
+        totalTree = 270,
+        plantedTree = 100,
+        plantedTreeLabel = "Elizabeth Jargrave"
+    )
     private val treeRow = arrayListOf<TreeRow>(
         TreeRow(
             rowId = 3,
@@ -45,11 +63,11 @@ class MainActivity : AppCompatActivity() {
                     rate = 35,
                     staffRows = arrayListOf<StaffRow>(
                         StaffRow(
-                            treeRowId = 3,
-                            currentTreeDone = 2
+                            treeRow = row3,
+                            currentTreeDone = 2,
                         ),
                         StaffRow(
-                            treeRowId = 4,
+                            treeRow = row4,
                             currentTreeDone = 2
                         ),
                     )
@@ -63,15 +81,15 @@ class MainActivity : AppCompatActivity() {
                     rate = 35,
                     staffRows = arrayListOf<StaffRow>(
                         StaffRow(
-                            treeRowId = 3,
+                            treeRow = row3,
                             currentTreeDone = 2
                         ),
                         StaffRow(
-                            treeRowId = 4,
+                            treeRow = row4,
                             currentTreeDone = 4
                         ),
                         StaffRow(
-                            treeRowId = 5,
+                            treeRow = row5,
                             currentTreeDone = 5,
                         )
                     )
@@ -92,15 +110,15 @@ class MainActivity : AppCompatActivity() {
                     rate = 35,
                     staffRows = arrayListOf<StaffRow>(
                         StaffRow(
-                            treeRowId = 3,
+                            treeRow = row3,
                             currentTreeDone = 2
                         ),
                         StaffRow(
-                            treeRowId = 4,
+                            treeRow = row4,
                             currentTreeDone = 2
                         ),
                         StaffRow(
-                            treeRowId = 5,
+                            treeRow = row5,
                             currentTreeDone = 5,
                         )
                     )
