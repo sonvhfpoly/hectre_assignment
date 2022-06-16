@@ -10,7 +10,7 @@ import com.hectre.sonvh.R
 import com.hectre.sonvh.databinding.HolderStaffRowBinding
 import com.hectre.sonvh.models.StaffRow
 
-class StaffRowAdapter(val staffRows: List<StaffRow>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class StaffRowAdapter(val staffRows: List<StaffRow>, val onRowClick: (StaffRow) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             return StaffRowHolder.create(parent)
@@ -18,7 +18,7 @@ class StaffRowAdapter(val staffRows: List<StaffRow>): RecyclerView.Adapter<Recyc
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = staffRows.get(position)
-        (holder as StaffRowHolder).bind(item)
+        (holder as StaffRowHolder).bind(item, onRowClick)
     }
 
     override fun getItemCount(): Int {
@@ -28,7 +28,7 @@ class StaffRowAdapter(val staffRows: List<StaffRow>): RecyclerView.Adapter<Recyc
 
 class StaffRowHolder(val binding: HolderStaffRowBinding): RecyclerView.ViewHolder(binding.root){
 
-    fun bind(staffRow: StaffRow){
+    fun bind(staffRow: StaffRow, onRowClick: (StaffRow) -> Unit){
         binding.tvRowId.text = staffRow.treeRow.rowId.toString()
         binding.root.setOnClickListener {
             staffRow.selected = !staffRow.selected
@@ -39,6 +39,7 @@ class StaffRowHolder(val binding: HolderStaffRowBinding): RecyclerView.ViewHolde
                 binding.tvRowId.setTextColor(Color.BLACK)
                 binding.root.setBackgroundResource(R.drawable.bg_row_not_selected)
             }
+            onRowClick(staffRow)
         }
         if (staffRow.treeRow.plantedTree > 0) {
             binding.orangeDot.isVisible = true

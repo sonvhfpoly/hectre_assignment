@@ -47,7 +47,7 @@ class JobBoardHolder(private val binding: HolderJobBinding): RecyclerView.ViewHo
 
     fun bind(job: Job){
         binding.tvJobType.text = job.label
-        val adapter = StaffAdapter()
+        val adapter = StaffAdapter(job.label)
         adapter.staffList.clear()
         adapter.staffList.addAll(job.staffs)
         binding.rcvStaffs.adapter = adapter

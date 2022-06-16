@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Orchard"
-        android:textSize="10sp"
         android:textColor="#a9a9a9"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/tv_avatar"
         app:layout_constraintTop_toBottomOf="@+id/tv_avatar" />
 
@@ -113,23 +113,25 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_piece_rate" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_wages_label"
+        tools:itemCount="3"
+        tools:listitem="@layout/holder_staff_row" />
 
     <TextView
         android:id="@+id/tv_staff_orchard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Benji"
-        android:textSize="10sp"
-        android:textColor="@color/black"
         android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/orchard_label"
-        app:layout_constraintStart_toEndOf="@+id/orchard_label" />
+        app:layout_constraintStart_toEndOf="@+id/orchard_label"
+        tools:text="Benji" />
 
     <TextView
         android:id="@+id/tv_staff_block"
@@ -141,4 +143,28 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/block_label"
         app:layout_constraintStart_toEndOf="@+id/block_label"
         tools:text="UB13" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_tree_rows"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rcv_staff_row"
+        tools:itemCount="3"
+        tools:listitem="@layout/holder_tree_row" />
+
+    <TextView
+        android:id="@+id/tv_wages_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#e2a630"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/btn_wages"
+        app:layout_constraintStart_toStartOf="@+id/btn_piece_rate"
+        app:layout_constraintTop_toBottomOf="@+id/btn_piece_rate"
+        tools:text="job_name will be paid by wages in this timesheet." />
 </androidx.constraintlayout.widget.ConstraintLayout>
